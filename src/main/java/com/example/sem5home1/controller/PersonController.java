@@ -27,20 +27,20 @@ public class PersonController {
                 .body(service.getPersonById(personId));
     }
 
-    @PostMapping("/new")
+    @PostMapping
     public ResponseEntity<Person> setNewPerson(@RequestBody Person person) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(service.addNewPerson(person));
     }
 
-    @PostMapping("/update/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Person> updatePerson(@PathVariable("id") Long personId,
                                                @RequestBody Person person) {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(service.updatePerson(personId, person));
     }
 
-    @PostMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deletePersonById(@PathVariable("id") Long personId) {
         service.deletePersonById(personId);
         return ResponseEntity.status(HttpStatus.OK)
