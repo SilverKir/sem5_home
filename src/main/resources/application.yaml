@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: sem5home1
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
