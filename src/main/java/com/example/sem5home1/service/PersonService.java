@@ -31,11 +31,8 @@ public class PersonService {
     }
 
     public Person updatePerson(Long personId, Person person) {
-        Person updatedPerson = getPersonById(personId);
-        updatedPerson.setName(person.getName());
-        updatedPerson.setAddress(person.getAddress());
-        updatedPerson.setEmail(person.getEmail());
-        return repository.save(updatedPerson);
+        person.setId(personId);
+        return repository.save(person);
     }
 
     public void deletePersonById(Long personId) {
