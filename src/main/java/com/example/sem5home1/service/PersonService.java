@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class PersonService {
-    PersonRepository repository;
+    private final PersonRepository repository;
 
     public Person addNewPerson(Person person) {
         return repository.save(person);

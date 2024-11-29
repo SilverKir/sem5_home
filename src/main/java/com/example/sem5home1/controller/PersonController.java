@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/persons")
 public class PersonController {
-    PersonService service;
+   private final PersonService service;
 
     @GetMapping
     public ResponseEntity<List<Person>> getAllPersons() {
